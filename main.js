@@ -18,7 +18,8 @@ function getJson(url) {
       url: url,
       success: function(json) {
         //console.log("great success");
-        $("#weather-current").html(Math.round(json.currently.temperature)+"°");
+          fahrenheit_to_сelsius(json.currently.temperature);
+        $("#weather-current").html((temperature_in_celsius.toFixed(1))+" °");
         $("#weather-high").html("High: "+Math.round(json.daily.data[0].temperatureMax)+"°");
         $("#weather-low").html("Low: "+Math.round(json.daily.data[0].temperatureMin)+"°");
         //setBackground(json.currently.icon);
@@ -31,3 +32,7 @@ function getJson(url) {
 setInterval(function () {
 }, 10000);
 })
+
+function fahrenheit_to_сelsius(temperature_in_fahrenheit) {
+    this.temperature_in_celsius = (temperature_in_fahrenheit - 32) / 1,8;
+}

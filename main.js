@@ -17,11 +17,9 @@ function getJson(url) {
       dataType: "jsonp",
       url: url,
       success: function(json) {
-        //console.log("great success");
         $("#weather-current").html(Math.round(json.currently.temperature)+"°");
         $("#weather-high").html("High: "+Math.round(json.daily.data[0].temperatureMax)+"°");
         $("#weather-low").html("Low: "+Math.round(json.daily.data[0].temperatureMin)+"°");
-        //setBackground(json.currently.icon);
       }
 
     })

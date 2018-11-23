@@ -11,13 +11,13 @@ function getURL() {
 }
 
 function getJson(url) {
-  //console.log("started getJson with this url: " + url);
+  //started getJson;
   $.ajax({
       format: "jsonp",
       dataType: "jsonp",
       url: url,
       success: function(json) {
-        //console.log("great success");
+
           fahrenheit_to_сelsius(json.currently.temperature);
         $("#weather-current").html((temperature_in_celsius.toFixed(1))+" °");
         $("#weather-high").html("High: "+Math.round(json.daily.data[0].temperatureMax)+"°");

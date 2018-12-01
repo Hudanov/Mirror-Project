@@ -1,11 +1,25 @@
-
 $(document).ready(function() {
-  getURL();
+  getURL();  
+});
 
 
 
 function getURL() {
-  var url = ("https://api.darksky.net/forecast/bbf75f07080e69bda9f8590cfb4efbed/49.85, 24.0166666667");
+  let latitude = 49.85;
+  let longitude = 24.017
+  if (navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        latitude  = position.coords.latitude;
+        longitude = position.coords.longitude;
+      },
+      () => {
+        console.log("Problems with geolocation");
+      }
+    );
+  }
+
+  var url = (`https://api.darksky.net/forecast/9728d94d2d32a542e30713c14ee91ce1/${latitude},${longitude}`);
   //console.log(url);
   getJson(url);
 }
@@ -17,11 +31,10 @@ function getJson(url) {
       dataType: "jsonp",
       url: url,
       success: function(json) {
-
-          fahrenheit_to_сelsius(json.currently.temperature);
-        $("#weather-current").html((temperature_in_celsius.toFixed(1))+" °");
-        $("#weather-high").html("High: "+Math.round(json.daily.data[0].temperatureMax)+"°");
-        $("#weather-low").html("Low: "+Math.round(json.daily.data[0].temperatureMin)+"°");
+        var cel = fahrenheit_to_сelsius(json.currently.temperature);
+        $("#weather-current").html("Current temperature: " + (cel.toFixed(1))+" °");
+        $("#weather-high").html("The highest day temperature: "+fahrenheit_to_сelsius(Math.round(json.daily.data[0].temperatureMax)).toFixed(1)+"°");
+        $("#weather-low").html("The lowest day temperature: "+fahrenheit_to_сelsius(Math.round(json.daily.data[0].temperatureMin)).toFixed(1)+"°");
         //setBackground(json.currently.icon);
       }
 
@@ -29,10 +42,6 @@ function getJson(url) {
 
   }
 
-setInterval(function () {
-}, 10000);
-})
-
 function fahrenheit_to_сelsius(temperature_in_fahrenheit) {
-    this.temperature_in_celsius = (temperature_in_fahrenheit - 32) / 1,8;
+    return (temperature_in_fahrenheit - 32) * 5 / 9;
 }

@@ -17,7 +17,6 @@ function getJson(url) {
       dataType: "jsonp",
       url: url,
       success: function(json) {
-
           fahrenheit_to_сelsius(json.currently.temperature);
         $("#weather-current").html((temperature_in_celsius.toFixed(1))+" °");
         $("#weather-high").html("High: "+Math.round(json.daily.data[0].temperatureMax)+"°");
@@ -30,9 +29,10 @@ function getJson(url) {
   }
 
 setInterval(function () {
+    getURL();
 }, 10000);
 })
 
 function fahrenheit_to_сelsius(temperature_in_fahrenheit) {
-    this.temperature_in_celsius = (temperature_in_fahrenheit - 32) / 1,8;
+    this.temperature_in_celsius = (temperature_in_fahrenheit - 32) / (1.8);
 }

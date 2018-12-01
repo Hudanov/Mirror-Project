@@ -32,7 +32,7 @@ function getJson(url) {
       url: url,
       success: function(json) {
         var cel = fahrenheit_to_сelsius(json.currently.temperature);
-        $("#weather-current").html("Current temperature: " + (cel.toFixed(1))+" °");
+        $("#weather-current").html("Current temperature: " + (cel.toFixed(1))+" °C");
         $("#weather-high").html("The highest day temperature: "+fahrenheit_to_сelsius(Math.round(json.daily.data[0].temperatureMax)).toFixed(1)+"°");
         $("#weather-low").html("The lowest day temperature: "+fahrenheit_to_сelsius(Math.round(json.daily.data[0].temperatureMin)).toFixed(1)+"°");
         //setBackground(json.currently.icon);

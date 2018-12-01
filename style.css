@@ -18,14 +18,21 @@ body {
     padding: 0;
 }
 .date-time-wrapper .date {
-    font-size: 50%;
+    font-size: 34%;
     margin: 0;
     padding: 0;
 }
 .weather-wrapper {
-    margin: 30px;
+    margin: 0 30px;
 }
-
+.weather-title {
+    font-size: 70px;
+    margin: 0;
+}
+.weather-info {
+    margin: 10px 0 0 0;
+    font-size: 40px;
+}
 /* 
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops

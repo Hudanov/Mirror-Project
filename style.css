@@ -10,8 +10,8 @@ body {
 .date-time-wrapper {
     font-family: "ledFont", Verdana, Tahoma;
     color: white;
-    font-size: 25.5vw;
-    padding: 25px;
+    font-size: 19.5vw;
+    padding: 20px;
 }
 .date-time-wrapper .time {
     margin: 0;

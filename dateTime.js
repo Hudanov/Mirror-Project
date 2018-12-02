@@ -1,3 +1,20 @@
+window.onload = function () {
+    hideAddressBar();
+    window.addEventListener("orientationchange", function () {
+        hideAddressBar();
+    }, false);
+}
+
+function hideAddressBar() {
+    setTimeout(function () {
+        document.body.style.height = window.outerHeight + 'px';
+        setTimeout(function () {
+            window.scrollTo(0, 1);
+        }, 1100);
+    }, 1000);
+    return false;
+}
+
 $(document).ready(function () {
     (function () {
         function updateClock(currentTime) {
@@ -8,7 +25,7 @@ $(document).ready(function () {
         function updateDate(currentTime) {
             var month = currentTime.getMonth() + 1;
             var day = currentTime.getDate();
-            var weekDay = currentTime.getDay() + 1;
+            var weekDay = currentTime.getDay();
             var year = currentTime.getFullYear();
             var dateTag = document.getElementById("date");
             dateTag.innerHTML = getWeekDayName(weekDay) + ",\t" + day + "\t" + getMonthName(month);
@@ -45,7 +62,7 @@ $(document).ready(function () {
                 case 4: return "Thuersday";
                 case 5: return "Friday";
                 case 6: return "Saturday";
-                case 7: return "Sunday";
+                case 0: return "Sunday";
             }
         }
     })();

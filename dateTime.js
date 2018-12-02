@@ -8,7 +8,7 @@ $(document).ready(function () {
         function updateDate(currentTime) {
             var month = currentTime.getMonth() + 1;
             var day = currentTime.getDate();
-            var weekDay = currentTime.getDay();
+            var weekDay = currentTime.getDay() + 1;
             var year = currentTime.getFullYear();
             var dateTag = document.getElementById("date");
             dateTag.innerHTML = getWeekDayName(weekDay) + ",\t" + day + "\t" + getMonthName(month);

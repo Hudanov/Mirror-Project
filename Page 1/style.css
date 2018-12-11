@@ -1,6 +1,8 @@
 @font-face {
     font-family: "ledFont";
     src: url("./ledDisplayFont.ttf");
+    font-family: "GeosansLight";
+    src: url("./GeosansLight.ttf");
 }
 body {
     margin: 0;
@@ -8,7 +10,7 @@ body {
     width: 100%;
 }
 .date-time-wrapper {
-    font-family: "ledFont", Verdana, Tahoma;
+    font-family: "GeosansLight", Verdana, Tahoma;
     color: white;
     font-size: 19.5vw;
     padding: 20px;
@@ -23,6 +25,7 @@ body {
     padding: 0;
 }
 .weather-wrapper {
+    font-family: "GeosansLight", Verdana, Tahoma;
     margin: 0 30px;
     padding-top: 30px;
     padding-left: 15px;

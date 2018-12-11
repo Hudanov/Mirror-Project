@@ -11,22 +11,24 @@
 </head>
 
 <body style="background-color:black">
-	<div class="content">
+	<div class="content" style="text-align: center">
 		<div class="date-time-wrapper">
 			<p id="clock" class="time"></p>
 			<p id="date" class="date"></p>
 		</div>
-		<div class="weather-wrapper">
+		<div class="weather-wrapper" style="text-align:center"> 
 			<!--	<div>
 	        <p class= "weather-title" style="color:white">Current Weather:</p>
 	      </div>-->
 			<div>
-				<p class="weather-title" id="weather-current" style="color:white"></p>
+				<span class="weather-title" id="weather-current" style="color:white"></span>
+				<canvas id="a" width="64" height="64"></canvas>
 				<!--<p class= "weather-info" id="weather-low" style="color:white"></p>
 					<p class= "weather-info" id="weather-high" style="color:white"></p>-->
 			</div>
 		</div>
 	</div>
+	<script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
 	<script src="weather.js"></script>
 	<script src="dateTime.js"></script>
 </body>

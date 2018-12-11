@@ -1,0 +1,26 @@
+@font-face {
+    font-family: "GeosansLight";
+    src: url("./GeosansLight.ttf");
+}
+p.mirrorFont {
+    font-family: "GeosansLigth", Verdana, Tahoma;
+    color: white;
+    font-size: 200%;
+    margin: 5px 50px 5px;
+}
+
+.news {
+    font-family: "GeosansLigth", Verdana, Tahoma;
+    color: white;
+    font-size: 25px;
+}
+
+.rates {
+    font-family: "GeosansLigth", Verdana, Tahoma;
+    color: white;
+    font-weight: 700;
+}
+
+
+
+
